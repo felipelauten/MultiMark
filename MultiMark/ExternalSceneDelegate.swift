@@ -8,6 +8,9 @@
 import UIKit
 
 class ExternalSceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    let previewFontName = "sans-serif"
+    let previewFontSize = 200
 
     var window: UIWindow?
 
@@ -23,6 +26,9 @@ class ExternalSceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let previewViewController = storyboard.instantiateViewController(withIdentifier: "PreviewViewController") as? PreviewViewController else {
             fatalError("Unable to find PreviewViewController")
         }
+        previewViewController.previewFontSize = previewFontSize
+        previewViewController.previewFontName = previewFontName
+        previewViewController.toolbarHidden = true
         
         ScreenManager.shared.addScreen(window: window!, andViewController: previewViewController)
     }

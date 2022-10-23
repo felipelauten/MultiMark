@@ -10,21 +10,39 @@ import Down
 
 class PreviewViewController: UIViewController {
     
-    @IBOutlet weak var outputView: UITextView!
+    @IBOutlet private weak var toolbar: UIToolbar!
+    @IBOutlet private weak var outputView: UITextView!
+    
+    var previewFontName = "sans-serif"
+    var previewFontSize = 100
+    
+    @IBInspectable var toolbarHidden: Bool = true
     
     var text: String = "" {
         didSet {
-            let down = Down(markdownString: text)
-            let style = "body { font: 200% sans-serif; }"
-            let attributedString = try? down.toAttributedString(stylesheet: style)
-            updateTextView(with: attributedString)
+            refreshPreview()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setToolbarHidden(toolbarHidden)
+    }
+    
+    fileprivate func setToolbarHidden(_ value: Bool) {
+        toolbar.isHidden = value
+    }
+    
+    fileprivate func refreshPreview() {
+        let down = Down(markdownString: text)
+        let style = "body { font: \(previewFontSize)% \(previewFontName); }"
+        let attributedString = try? down.toAttributedString(stylesheet: style)
+        updateTextView(with: attributedString)
+    }
+    
+    @IBAction func zoomChanged(_ sender: UISlider) {
+        previewFontSize = Int(sender.value)
+        refreshPreview()
     }
     
     fileprivate func updateTextView(with text:NSAttributedString?) {

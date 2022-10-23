@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -83,35 +84,59 @@ Start by writing your markdown file here.</string>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOO-Tl-cq5">
+                                <rect key="frame" x="0.0" y="761" width="390" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6RE-oT-4fO"/>
+                                    <barButtonItem style="plain" id="IGL-Mz-LUL">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="50" maxValue="200" id="Qql-eo-Q5B">
+                                            <rect key="frame" x="170" y="10" width="204" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageReference key="minimumValueImage" image="minus.magnifyingglass" catalog="system" symbolScale="default" renderingMode="original"/>
+                                            <imageReference key="maximumValueImage" image="plus.magnifyingglass" catalog="system" symbolScale="default" renderingMode="original" variableValue="1"/>
+                                            <connections>
+                                                <action selector="zoomChanged:" destination="3sK-qo-xvw" eventType="valueChanged" id="0QH-UG-WJN"/>
+                                            </connections>
+                                        </slider>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jEL-Rf-D0M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wTk-pP-fhP" firstAttribute="trailing" secondItem="jEL-Rf-D0M" secondAttribute="trailing" id="Iv8-Bd-etw"/>
                             <constraint firstAttribute="bottom" secondItem="wTk-pP-fhP" secondAttribute="bottom" id="Oao-Ho-2Xd"/>
+                            <constraint firstItem="jOO-Tl-cq5" firstAttribute="trailing" secondItem="jEL-Rf-D0M" secondAttribute="trailing" id="TZP-4t-CGQ"/>
+                            <constraint firstItem="jOO-Tl-cq5" firstAttribute="leading" secondItem="jEL-Rf-D0M" secondAttribute="leading" id="Wrh-jy-fGp"/>
+                            <constraint firstItem="jEL-Rf-D0M" firstAttribute="bottom" secondItem="jOO-Tl-cq5" secondAttribute="bottom" id="hPt-yH-gSB"/>
                             <constraint firstItem="wTk-pP-fhP" firstAttribute="leading" secondItem="jEL-Rf-D0M" secondAttribute="leading" id="vXB-ez-5NE"/>
                             <constraint firstItem="wTk-pP-fhP" firstAttribute="top" secondItem="Ly4-oR-FBA" secondAttribute="top" id="xLY-Ix-u2e"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Preview" id="emE-Ll-Hb7"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="toolbarHidden" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="outputView" destination="wTk-pP-fhP" id="WnR-hX-Kbc"/>
+                        <outlet property="toolbar" destination="jOO-Tl-cq5" id="k6o-51-l8m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rx7-aN-twX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="709"/>
+            <point key="canvasLocation" x="793.84615384615381" y="708.76777251184831"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="e7p-J4-cba">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U7F-oi-6Jo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <splitViewController allowDoubleColumnStyle="YES" preferredDisplayMode="twoBeside" behavior="tile" id="ULB-8g-zP5" sceneMemberID="viewController">
                     <connections>
                         <segue destination="dz1-4k-swa" kind="relationship" relationship="masterViewController" id="QEg-nU-6E3"/>
                         <segue destination="TnL-p6-RfS" kind="relationship" relationship="detailViewController" id="DWd-6C-lmz"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7F-oi-6Jo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1026" y="259"/>
         </scene>
@@ -153,6 +178,8 @@ Start by writing your markdown file here.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="minus.magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="plus.magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
