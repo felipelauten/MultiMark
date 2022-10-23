@@ -16,7 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        guard session.configuration.name != AppDelegate.mainSceneConfigurationIdentifier else { return }
+        if #available(iOS 16.0, *) {
+            guard session.role == .windowExternalDisplayNonInteractive else { return }
+        } else {
+            guard session.configuration.name != AppDelegate.mainSceneConfigurationIdentifier else { return }
+        }
         guard let storyboard = session.configuration.storyboard else { return }
         
         guard let previewViewController = storyboard.instantiateViewController(withIdentifier: "PreviewViewController") as? PreviewViewController else {
