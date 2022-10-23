@@ -24,6 +24,10 @@ class ViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        textView.becomeFirstResponder()
+    }
+    
     func textViewDidChange(_ textView: UITextView) {
         // Updates external display view controller (if exists)
         if let preview = ScreenManager.shared.firstViewController() as? PreviewViewController {
