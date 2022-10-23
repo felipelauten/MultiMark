@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dz1-4k-swa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ULB-8g-zP5">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Edit-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MultiMark" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <constraint firstItem="AlS-ya-uzP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="psg-gO-kUj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WPe-Ki-b4V"/>
+                    <navigationItem key="navigationItem" title="Edit" id="WPe-Ki-b4V"/>
                     <connections>
                         <outlet property="textView" destination="AlS-ya-uzP" id="g4E-kp-0qu"/>
                     </connections>
@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="793.84615384615381" y="3.5545023696682461"/>
         </scene>
-        <!--Preview View Controller-->
+        <!--Preview-->
         <scene sceneID="L7M-Z7-Y5M">
             <objects>
-                <viewController storyboardIdentifier="PreviewViewController" id="3sK-qo-xvw" customClass="PreviewViewController" customModule="MultiMark" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreviewViewController" title="Preview" id="3sK-qo-xvw" customClass="PreviewViewController" customModule="MultiMark" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ly4-oR-FBA">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wTk-pP-fhP">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -70,13 +70,27 @@
                             <constraint firstItem="wTk-pP-fhP" firstAttribute="top" secondItem="Ly4-oR-FBA" secondAttribute="top" id="xLY-Ix-u2e"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Preview" id="emE-Ll-Hb7"/>
                     <connections>
                         <outlet property="outputView" destination="wTk-pP-fhP" id="WnR-hX-Kbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rx7-aN-twX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1715.3846153846152" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="794" y="709"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="e7p-J4-cba">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7F-oi-6Jo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <splitViewController allowDoubleColumnStyle="YES" preferredDisplayMode="twoBeside" behavior="tile" primaryBackgroundStyle="sidebar" id="ULB-8g-zP5" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="dz1-4k-swa" kind="relationship" relationship="masterViewController" id="QEg-nU-6E3"/>
+                        <segue destination="TnL-p6-RfS" kind="relationship" relationship="detailViewController" id="DWd-6C-lmz"/>
+                    </connections>
+                </splitViewController>
+            </objects>
+            <point key="canvasLocation" x="-1026" y="259"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IM9-el-cAg">
@@ -95,6 +109,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wW0-hW-Wo9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36.92307692307692" y="3.5545023696682461"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u6V-on-GJI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TnL-p6-RfS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OYm-AM-hw0">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3sK-qo-xvw" kind="relationship" relationship="rootViewController" id="PL1-BU-wMk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMj-OY-BVc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36.92307692307692" y="708.76777251184831"/>
         </scene>
     </scenes>
     <resources>

@@ -25,8 +25,16 @@ class ViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        guard let preview = ScreenManager.shared.firstViewController() as? PreviewViewController else { return }
-        updateText(on: preview)
+        // Updates external display view controller (if exists)
+        if let preview = ScreenManager.shared.firstViewController() as? PreviewViewController {
+            updateText(on: preview)
+        }
+        
+        // Updates Split Screen secondary view controller
+        if let secondaryNav = splitViewController?.viewControllers.last as? UINavigationController,
+           let splitPreview = secondaryNav.topViewController as? PreviewViewController {
+            updateText(on: splitPreview)
+        }
     }
 
     func updateText(on viewController: PreviewViewController) {
