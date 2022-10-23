@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard session.configuration.name != AppDelegate.mainSceneConfigurationIdentifier else { return }
         guard let storyboard = session.configuration.storyboard else { return }
         
-        let previewViewController = storyboard.instantiateViewController(withIdentifier: "PreviewViewController")
+        guard let previewViewController = storyboard.instantiateViewController(withIdentifier: "PreviewViewController") as? PreviewViewController else {
+            fatalError("Unable to find PreviewViewController")
+        }
         
         ScreenManager.shared.addScreen(window: window!, andViewController: previewViewController)
     }

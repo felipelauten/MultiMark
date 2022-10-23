@@ -17,7 +17,7 @@ class PreviewViewController: UIViewController {
             let down = Down(markdownString: text)
             let style = "body { font: 200% sans-serif; }"
             let attributedString = try? down.toAttributedString(stylesheet: style)
-            outputView.attributedText = attributedString
+            updateTextView(with: attributedString)
         }
     }
     
@@ -25,6 +25,13 @@ class PreviewViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    fileprivate func updateTextView(with text:NSAttributedString?) {
+        guard let attributedString = text else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.outputView.attributedText = attributedString
+        }
     }
     
 

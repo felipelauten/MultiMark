@@ -9,6 +9,9 @@ import UIKit
 
 class ScreenManager {
     
+    static let ScreenConnected = Notification.Name("ScreenManager.ScreenConnected")
+    static let ScreenDisconnected = Notification.Name("ScreenManager.ScreenDisconnected")
+    
     // Internal Map
     private var additionalWindows = [UIWindow: UIViewController]()
     
@@ -29,6 +32,8 @@ class ScreenManager {
         
         attachViewController(vc, to: window)
         additionalWindows[window] = vc
+        
+        NotificationCenter.default.post(Notification(name: ScreenManager.ScreenConnected, object: vc))
     }
     
     func removeScreen(window: UIWindow) {
@@ -41,6 +46,8 @@ class ScreenManager {
         
         detachViewController(from: window)
         additionalWindows[window] = nil
+        
+        NotificationCenter.default.post(Notification(name: ScreenManager.ScreenDisconnected))
     }
     
     func firstViewController() -> UIViewController? {
