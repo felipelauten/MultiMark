@@ -66,6 +66,7 @@
 			children = (
 				551255BD29049DDB000FE98C /* AppDelegate.swift */,
 				551255BF29049DDB000FE98C /* SceneDelegate.swift */,
+				55118C8A2904A94D002397CB /* ScreenManager.swift */,
 				55B636BB29053E0800BC95F9 /* ExternalSceneDelegate.swift */,
 				551255C129049DDB000FE98C /* ViewController.swift */,
 				55118C882904A1BB002397CB /* PreviewViewController.swift */,
@@ -73,7 +74,6 @@
 				551255C629049DDC000FE98C /* Assets.xcassets */,
 				551255C829049DDC000FE98C /* LaunchScreen.storyboard */,
 				551255CB29049DDC000FE98C /* Info.plist */,
-				55118C8A2904A94D002397CB /* ScreenManager.swift */,
 			);
 			path = MultiMark;
 			sourceTree = "<group>";
@@ -312,6 +312,7 @@
 				DEVELOPMENT_TEAM = MLDYC6247F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MultiMark/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -341,6 +342,7 @@
 				DEVELOPMENT_TEAM = MLDYC6247F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MultiMark/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

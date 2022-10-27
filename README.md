@@ -15,6 +15,7 @@ You can find the original live screen [here](https://www.youtube.com/watch?v=UYv
 ## Acknowledgments
 Thank you Mr. Paul Hudson for the excellent tutorial.
 Thank you the author of Down library to make an easy to use Markdown package for iOS
+Vector graphics icon got from [Vecteezy](https://www.vecteezy.com/vector-art/13252688-editor-pen-photo)
 
 ## About me
 I am Felipe Lautenschlager. For a long time working with Java Enterprise applications and now experimenting with some other technologies.
