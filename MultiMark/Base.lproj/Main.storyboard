@@ -52,7 +52,13 @@ Start by writing your markdown file here.</string>
                             <constraint firstItem="AlS-ya-uzP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="psg-gO-kUj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit" id="WPe-Ki-b4V"/>
+                    <navigationItem key="navigationItem" title="Edit" id="WPe-Ki-b4V">
+                        <barButtonItem key="rightBarButtonItem" title="Preview" landscapeImage="doc.text.fill" catalog="system" id="CkM-WB-ApK">
+                            <connections>
+                                <segue destination="TnL-p6-RfS" kind="showDetail" id="Ykl-ju-VuF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textView" destination="AlS-ya-uzP" id="g4E-kp-0qu"/>
                     </connections>
@@ -107,8 +113,8 @@ Start by writing your markdown file here.</string>
                         <constraints>
                             <constraint firstItem="wTk-pP-fhP" firstAttribute="trailing" secondItem="jEL-Rf-D0M" secondAttribute="trailing" id="Iv8-Bd-etw"/>
                             <constraint firstAttribute="bottom" secondItem="wTk-pP-fhP" secondAttribute="bottom" id="Oao-Ho-2Xd"/>
-                            <constraint firstItem="jOO-Tl-cq5" firstAttribute="trailing" secondItem="jEL-Rf-D0M" secondAttribute="trailing" id="TZP-4t-CGQ"/>
-                            <constraint firstItem="jOO-Tl-cq5" firstAttribute="leading" secondItem="jEL-Rf-D0M" secondAttribute="leading" id="Wrh-jy-fGp"/>
+                            <constraint firstItem="jOO-Tl-cq5" firstAttribute="trailing" secondItem="Ly4-oR-FBA" secondAttribute="trailing" id="TZP-4t-CGQ"/>
+                            <constraint firstItem="jOO-Tl-cq5" firstAttribute="leading" secondItem="Ly4-oR-FBA" secondAttribute="leading" id="Wrh-jy-fGp"/>
                             <constraint firstItem="jEL-Rf-D0M" firstAttribute="bottom" secondItem="jOO-Tl-cq5" secondAttribute="bottom" id="hPt-yH-gSB"/>
                             <constraint firstItem="wTk-pP-fhP" firstAttribute="leading" secondItem="jEL-Rf-D0M" secondAttribute="leading" id="vXB-ez-5NE"/>
                             <constraint firstItem="wTk-pP-fhP" firstAttribute="top" secondItem="Ly4-oR-FBA" secondAttribute="top" id="xLY-Ix-u2e"/>
@@ -177,7 +183,11 @@ Start by writing your markdown file here.</string>
             <point key="canvasLocation" x="36.92307692307692" y="708.76777251184831"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DWd-6C-lmz"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="doc.text.fill" catalog="system" width="115" height="128"/>
         <image name="minus.magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="plus.magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">

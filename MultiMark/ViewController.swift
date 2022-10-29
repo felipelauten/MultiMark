@@ -14,6 +14,12 @@ class ViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         textView.delegate = self
         
+        // Hides the preview button for iPads
+        let device = UIDevice.current
+        if device.userInterfaceIdiom == .pad {
+            self.navigationItem.setRightBarButton(nil, animated: false)
+        }
+        
         NotificationCenter.default.addObserver(forName: ScreenManager.ScreenConnected,
                                                object: nil,
                                                queue: nil) { [weak self] notification in
@@ -45,5 +51,12 @@ class ViewController: UIViewController, UITextViewDelegate {
         viewController.text = textView.text
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navController = segue.destination as? UINavigationController, let previewViewController = navController.topViewController as? PreviewViewController else {
+            fatalError("Could not get PreviewViewController from segue")
+        }
+        
+        updateText(on: previewViewController)
+    }
 }
 

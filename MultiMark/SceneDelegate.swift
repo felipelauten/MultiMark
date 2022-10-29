@@ -27,9 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     }
     
     // This makes the secondary view controller to always be visible on large iPhones
-//    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-//        return true
-//    }
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return false
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         ScreenManager.shared.removeScreen(window: window!)

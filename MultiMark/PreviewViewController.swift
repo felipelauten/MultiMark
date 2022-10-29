@@ -35,8 +35,9 @@ class PreviewViewController: UIViewController {
     
     fileprivate func refreshPreview() {
         let down = Down(markdownString: text)
-        let style = "body { font: \(previewFontSize)% \(previewFontName); }"
+        let style = "body { font: \(previewFontSize)% \(previewFontName); font-color: \(UIColor.label)}"
         let attributedString = try? down.toAttributedString(stylesheet: style)
+        
         updateTextView(with: attributedString)
     }
     
